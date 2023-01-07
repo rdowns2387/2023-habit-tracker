@@ -30,3 +30,9 @@ table {
   background-color: white;
 }
 
+.rounded-corners {
+  background-color: white ;
+  border-radius: 10px !important;
+  padding: 1rem !important;
+}
+
