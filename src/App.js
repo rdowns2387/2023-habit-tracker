@@ -3,38 +3,30 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import './App.css'
-import JanuaryCard from "./components/januaryCard";
+import JanuaryCard from "./components/JanuaryCard";
+import HabitCard from "./components/HabitCard";
+import { useState } from 'react';
 
 function App() {
 
   let currentMonth = 'January'
+  const months = [
+    {month: 'January', days: 31},
+    {month:'February', days: 28}
+  ]
+
+  const [didHabit, setDidHabit] = useState(false);
+
+  const toggleDidHabit = () => {
+    setDidHabit(true);
+  }
   
-  const months = {
-    january: 31,
-    february: 28,
-    march: 31,
-    april: 30,
-    may: 31,
-    june: 30,
-    july: 31,
-    august: 31,
-    september: 30,
-    october: 31,
-    november: 30,
-    december: 31,
-  };
-  // let readHabit = [{ one: true, two: false, three: true }];
-  // function renderJanuary() {
-  //   for (let i = 0; i < months.january; i++) {
-  //     console.log(i);
-  //   }
-  // }
+
 
   return (
     <div>
       <Container>
-        <h1>{months.january}</h1>
-        <h1>Ryan's 2023 Habit Tracker</h1>
+        <h1>2023 Habit Tracker</h1>
         <Row>
           <Col>
             <h2>{currentMonth} 2023</h2>
@@ -48,9 +40,16 @@ function App() {
           {currentMonth ?           
           <JanuaryCard/> : <h1>It's not January</h1> }
         </div>
+        {months.map((props)=>{
+          return (
+            <HabitCard month={props.month} days={props.days}/>
+          )
+        })}
       </Container>
     </div>
   );
 }
+
+
 
 export default App;

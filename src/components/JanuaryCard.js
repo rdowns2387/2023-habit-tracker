@@ -1,9 +1,11 @@
 import Table from "react-bootstrap/Table";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CheckMark from "./CheckMark";
+import Container from 'react-bootstrap/Container'
 
 function JanuaryCard(){
     return(
+        <Container>
     <Table bordered hover>
             <thead>
               <tr>
@@ -121,7 +123,8 @@ function JanuaryCard(){
                 <td>
                   <CheckMark />
                 </td>{" "}
-                <td></td>
+                <td>                  <CheckMark />
+</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -161,7 +164,8 @@ function JanuaryCard(){
                   <CheckMark />
                 </td>
                 <td></td>
-                <td></td>
+                <td>                  <CheckMark />
+</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -243,7 +247,8 @@ function JanuaryCard(){
                   {" "}
                   <CheckMark />
                 </td>
-                <td></td>
+                <td>                  <CheckMark />
+</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -283,7 +288,8 @@ function JanuaryCard(){
                   <CheckMark />
                 </td>{" "}
                 <td></td>
-                <td></td>
+                <td>                  <CheckMark />
+</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -368,7 +374,8 @@ function JanuaryCard(){
                   {" "}
                   <CheckMark />
                 </td>
-                <td></td>
+                <td>                  <CheckMark />
+</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -437,6 +444,7 @@ function JanuaryCard(){
               </tr>
             </tbody>
           </Table>
+          </Container>
           )
 }
 
