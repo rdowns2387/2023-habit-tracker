@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CheckMark from "./CheckMark";
 import Container from "react-bootstrap/Container";
 import { useState } from "react";
+import daysOfTheMonth from "./daysOfTheMonth";
 
 function JanuaryCard() {
   const [didHabit, setDidHabit] = useState(false);
@@ -10,6 +11,8 @@ function JanuaryCard() {
   const toggleDidHabit = () => {
     setDidHabit(!didHabit);
   };
+
+  console.log("this is jan days of month" + daysOfTheMonth);
 
   const January = [
     {
@@ -21,43 +24,67 @@ function JanuaryCard() {
       },
     },
   ];
-  const days = [
-    "01",
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
-    "25",
-    "26",
-    "27",
-    "28",
-    "29",
-    "30",
-    "31",
-  ];
 
-  const workOutHabit = [false, true, true, true, true, true, false];
-  const codeHabit = [false, true, true, true, true, true, false];
-  const flossHabit = [false, true, true, true, true, true, false];
+  const workOutHabit = [
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ];
+  const codeHabit = [
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+  ];
+  const flossHabit = [
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+  ];
   const macroHabit = [false, true, true, true, true, true, false];
   const waterHabit = [false, true, true, true, true, true, false];
   const journalHabit = [false, true, true, true, true, true, false];
@@ -72,7 +99,7 @@ function JanuaryCard() {
             <th className="habit-column">
               <p className="column-header">Habit</p>
             </th>
-            {days.map((day) => {
+            {daysOfTheMonth.map((day) => {
               return (
                 <th>
                   <p className="column-header">{day}</p>
@@ -96,46 +123,15 @@ function JanuaryCard() {
           </tr>
           <tr>
             <td>Code</td>
-            <td></td>
-            <td>
-              <CheckMark />
-            </td>
-            <td>
-              <CheckMark />
-            </td>
-            <td>
-              <CheckMark />
-            </td>
-            <td></td>
-            <td>
-              {" "}
-              <CheckMark />
-            </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            {codeHabit.map((day) => {
+              return day ? (
+                <td>
+                  <CheckMark />
+                </td>
+              ) : (
+                <td></td>
+              );
+            })}
           </tr>
           <tr>
             <td>Floss</td>
@@ -153,12 +149,30 @@ function JanuaryCard() {
               {" "}
               <CheckMark />
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
             <td></td>
             <td></td>
             <td></td>
@@ -199,12 +213,29 @@ function JanuaryCard() {
               {" "}
               <CheckMark />
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
             <td></td>
             <td></td>
             <td></td>
@@ -242,12 +273,30 @@ function JanuaryCard() {
               {" "}
               <CheckMark />
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>{" "}
+            <td>
+              {" "}
+              <CheckMark />
+            </td>{" "}
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
             <td></td>
             <td></td>
             <td></td>
@@ -285,12 +334,27 @@ function JanuaryCard() {
               {" "}
               <CheckMark />
             </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>{" "}
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
             <td></td>
             <td></td>
             <td></td>
@@ -333,13 +397,34 @@ function JanuaryCard() {
               {" "}
               <CheckMark />
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>{" "}
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
             <td></td>
             <td></td>
             <td></td>
@@ -376,13 +461,34 @@ function JanuaryCard() {
               {" "}
               <CheckMark />
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>{" "}
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
+            <td>
+              {" "}
+              <CheckMark />
+            </td>
             <td></td>
             <td></td>
             <td></td>
